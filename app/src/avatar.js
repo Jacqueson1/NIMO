@@ -14,6 +14,28 @@ export function setTalking(value) {
   talking = value;
 }
 
+const MOOD_TO_EXPRESSION = {
+  neutral: 0,
+  happy: 1,
+  excited: 3,
+  sad: 4,
+  embarrassed: 5,
+  shocked: 6,
+  angry: 7,
+};
+
+export function setMood(mood) {
+  if (!model) return;
+  model.expression(MOOD_TO_EXPRESSION[mood] ?? 0);
+}
+
+export function playGesture() {
+  if (!model) return;
+  const defs = model.internalModel.motionManager.definitions["TopBody"];
+  if (!defs?.length) return;
+  model.motion("TopBody", Math.floor(Math.random() * defs.length));
+}
+
 function fit() {
   if (!app || !model) return;
   const width = app.screen.width;
