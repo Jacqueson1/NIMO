@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIMO</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="vendor/live2dcubismcore.min.js"></script>
+  <script src="vendor/pixi.min.js"></script>
+  <script src="vendor/cubism4.min.js"></script>
+  <script type="module" src="main.js" defer></script>
+</head>
+
+<body>
+  <main class="app">
+  <section id="avatar" class="avatar">
+    <canvas id="avatar-canvas"></canvas>
+  </section>
+
+  <section class="chat">
+    <div id="messages" class="messages"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="input" autocomplete="off" placeholder="Say something..." />
+      <button id="send" type="submit">Send</button>
+    </form>
+  </section>
+</main>
+</body>
+
+</html>

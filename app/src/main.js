@@ -4,6 +4,11 @@ const messagesEl = document.getElementById("messages");
 const formEl = document.getElementById("chat-form");
 const inputEl = document.getElementById("input");
 const sendBtn = document.getElementById("send");
+import { initAvatar } from "./avatar.js";
+
+initAvatar(document.getElementById("avatar-canvas")).catch((err) => {
+  console.error("Avatar failed to load:", err);
+});
 
 function addMessage(role, text = "") {
   const el = document.createElement("div");
