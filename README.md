@@ -4,7 +4,7 @@
 
 ### A local AI chatbot with an animated Live2D avatar, as a desktop app.
 
-Talk to **Mao**. She answers in real time, moves her mouth while she speaks, and changes expression to match her mood. Everything runs on your own machine, with no cloud and no API keys.
+Talk to **Mao** (model will be changed later, Mao is placeholder). She answers in real time, moves her mouth while she speaks, and changes expression to match her mood. Everything runs on your own machine, with no cloud and no API keys.
 
 <br />
 
