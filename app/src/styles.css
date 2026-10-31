@@ -12,12 +12,17 @@ html, body {
 
 .avatar {
   flex: 0 0 40%;
+  min-width: 0;
   position: relative;
   overflow: hidden;
   background: #181b26;
   border-right: 1px solid #262a3a;
 }
-.avatar canvas { display: block; width: 100%; height: 100%; }
+.avatar canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
 
 .chat { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 

@@ -4,7 +4,7 @@ const messagesEl = document.getElementById("messages");
 const formEl = document.getElementById("chat-form");
 const inputEl = document.getElementById("input");
 const sendBtn = document.getElementById("send");
-import { initAvatar } from "./avatar.js";
+import { initAvatar, setTalking } from "./avatar.js";
 
 initAvatar(document.getElementById("avatar-canvas")).catch((err) => {
   console.error("Avatar failed to load:", err);
@@ -38,6 +38,8 @@ async function sendMessage(text) {
     });
     if (!res.ok) throw new Error(`Server returned ${res.status}`);
 
+    setTalking(true); 
+
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     while (true) {
@@ -50,6 +52,8 @@ async function sendMessage(text) {
     botEl.textContent = "⚠ Can't reach the backend. Is uvicorn running on port 8000?";
     console.error(err);
   } finally {
+
+    setTalking(false);  
     setBusy(false);
   }
 }
